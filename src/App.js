@@ -16,49 +16,52 @@ function App() {
       saveFavourite(videoData);
       setShowfav(true);
     } catch (err) {
-console.error(err);
+      console.error(err);
     }
   };
 
   const getFav = () => {
     try {
       setSearchResults([]);
-    setSearchResults(getFavourites());
+      setSearchResults(getFavourites());
     } catch (err) {
       setSearchResults([]);
       setSearchDisplayText("Error fetching details");
     }
-    
   };
   const handleSearch = async (queryString) => {
     try {
       const results = await searchVideos(queryString);
-      if(results){
+      if (results && results.length > 0) {
         setSearchResults(results);
       } else {
-        setSearchDisplayText("Error fetching details");
+        setSearchResults([]);
+        setSearchDisplayText("No search details available");
       }
-      
     } catch (err) {
       console.error(err);
     }
   };
   useEffect(() => {
     const preSavedFav = getFavourites();
-    if (preSavedFav && preSavedFav.length > 0){
+    if (preSavedFav && preSavedFav.length > 0) {
       setShowfav(true);
-    }}, [])
+    }
+  }, []);
   return (
     <div className="App">
-      <SearchBar searchNow={handleSearch} getFav={getFav} showfav={showfav}/>
+      <SearchBar searchNow={handleSearch} getFav={getFav} showfav={showfav} />
 
       {currentPlayVideoId ? <Player id={currentPlayVideoId} /> : ""}
-      {searchResult.length>0 ? <SearchList
-        videosData={searchResult}
-        saveToFav={saveFavItem}
-        playVideo={setcurrentPlayVideoId}
-      /> : searchDisplayText}
-      
+      {searchResult.length > 0 ? (
+        <SearchList
+          videosData={searchResult}
+          saveToFav={saveFavItem}
+          playVideo={setcurrentPlayVideoId}
+        />
+      ) : (
+        searchDisplayText
+      )}
     </div>
   );
 }

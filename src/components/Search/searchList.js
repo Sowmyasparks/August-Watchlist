@@ -3,7 +3,7 @@ import SearchItem from "./searchItem";
 import "./style.css";
 
 const SearchList = ({ videosData, saveToFav, playVideo }) => {
-  return ( 
+  return (
     <div className="searchList">
       {videosData.map((d) => (
         <SearchItem
@@ -12,7 +12,7 @@ const SearchList = ({ videosData, saveToFav, playVideo }) => {
           playVideo={playVideo}
           saveToFav={saveToFav}
         />
-      ))} 
+      ))}
     </div>
   );
 };

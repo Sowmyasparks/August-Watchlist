@@ -12,24 +12,31 @@
 .actionButton {
   display: flex;
   align-items: center;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 0.75rem;
   padding: 0.7em 1.4em 0.7em 1.1em;
-  color: white;
-  background: linear-gradient(
-    0deg,
-    rgba(20, 167, 62, 1) 0%,
-    rgba(102, 247, 113, 1) 100%
-  );
+  color: #333;
+  height: min-content;
   border: none;
-  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  /* box-shadow: 0 0.7em 1.5em -0.5em #14a73e98; 
+      background: linear-gradient(-45deg, rgb(35,166,213) 0%, rgb(35,213,171) 100%);
+      */
+  background: linear-gradient(0deg, rgb(35, 213, 171) 0%, rgb(45 245 198) 100%);
   letter-spacing: 0.05em;
   border-radius: 2em;
   cursor: pointer;
 }
 
 .actionButton:hover {
-  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+  background: linear-gradient(
+    -45deg,
+    rgb(35, 213, 171) 0%,
+    rgb(111, 206, 241) 100%
+  );
+  box-shadow: 0 0.5em 1.5em -0.5em #ccee52;
+  color: aliceblue;
+  transform: translateY(-1px);
+  /*box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);*/
 }
 
 .actionButton:active {

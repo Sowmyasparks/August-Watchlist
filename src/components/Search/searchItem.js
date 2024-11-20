@@ -16,12 +16,10 @@ const SearchItem = ({ data, playVideo, saveToFav }) => {
           className="actionButton"
           onClick={() => playVideo(data.id.videoId)}
         >
-          {" "}
-          Play video{" "}
+          Play video
         </button>
         <button className="actionButton" onClick={() => saveToFav(data)}>
-          {" "}
-          Save to fav{" "}
+          Save to fav
         </button>
         {/* <Button label={"Save to fav"}
         info={"save the video to fav list"}

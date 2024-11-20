@@ -1,52 +1,48 @@
-.genBtn{
-
+.genBtn {
 }
 
 .btnDisabled {
-
 }
 
-.btnActive{
-
+.btnActive {
 }
 
-.iconBtn{
-    background-size: 1em;
-    background-repeat: no-repeat;
-    width: 2rem;
-    height: 2rem;
-    background-position: center;
-    border-radius: 5px;
-    border: none;
-    margin: 1rem;
+.iconBtn {
+  background-size: 1em;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-position: center;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem;
 }
 
-.textBtn{
-
+.textBtn {
 }
 
-.genBtn:hover{
-background-color: blue;
+.genBtn:hover {
+  background-color: blue;
 }
 .tooltip {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color:black;
-    color: #260afa;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #260afa;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
