@@ -1,0 +1,109 @@
+.searchItem {
+  border-radius: 10px;
+  border: 1px solid #bfbfbf;
+  /* background-color: white;
+box-shadow: 10px 10px 5px #aaaaaa; */
+
+  background-color: rgb(84 82 82 / 50%);
+  overflow: hidden;
+  text-align: center;
+  width: 40vh;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.searchItemThumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.searchItemTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: medium;
+  color: rgb(248, 246, 246);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2.5em;
+}
+
+.searchList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.searchBarContainer {
+  display: flex;
+  padding: 1em;
+  width: 80vw;
+  box-shadow: 1px 1px #888888;
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 2rem;
+}
+
+.generalBtn {
+  background-size: 1em;
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background-position: center;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem;
+}
+
+.generalBtn:hover {
+  background-color: #e7e7e7;
+}
+
+.searchButton {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg");
+}
+
+.favButton {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/67/Favorite_Icon.png");
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+@media screen and (max-width: 768px) {
+  .searchList {
+    flex-direction: column;
+  }
+}
+
+.errorText {
+  color: rgb(251, 220, 220);
+  font-size: small;
+  margin-top: -1.5rem;
+}
+
+.fullScreenMode {
+  background: linear-gradient(-45deg, #ccee52, #23a6d5, #23d5ab);
+  background-size: 300% 300%;
+  height: 100vh;
+  width: 100vw;
+}
+
+.normalMode {
+  background: linear-gradient(-45deg, #ccee52, #23a6d5, #23d5ab);
+  background-size: 300% 300%;
+  height: 30vh;
+  width: 100vw;
+}
