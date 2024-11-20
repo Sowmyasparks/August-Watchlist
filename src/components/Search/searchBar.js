@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import TextField from "../TextField";
 import Button from "../Button";
 import "./style.css";
 
-const SearchBar = ({ searchNow, getFav }) => {
+const SearchBar = ({ searchNow, getFav,showfav }) => {
   const [searchInput, setSearchInput] = useState("");
   const [error, setError] = useState("");
   const handleChange = (e) => {
@@ -27,6 +27,10 @@ const SearchBar = ({ searchNow, getFav }) => {
     }
   };
 
+
+
+  
+
   return (
     <div className={``}>
       <div className=" searchBarContainer">
@@ -40,10 +44,10 @@ const SearchBar = ({ searchNow, getFav }) => {
           className="generalBtn searchButton"
           onClick={handleSearch}
         ></button>
-        <button
+        {showfav ? <button
           className="generalBtn favButton"
           onClick={() => getFav()}
-        ></button>
+        ></button> : ""}
       </div>
     </div>
   );

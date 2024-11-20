@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import SearchBar from "./components/Search/searchBar";
 import SearchList from "./components/Search/searchList";
@@ -10,9 +10,11 @@ function App() {
   const [searchResult, setSearchResults] = useState([]);
   const [currentPlayVideoId, setcurrentPlayVideoId] = useState("");
   const [searchDisplayText, setSearchDisplayText] = useState("");
+  const [showfav, setShowfav] = useState(false);
   const saveFavItem = (videoData) => {
     try {
       saveFavourite(videoData);
+      setShowfav(true);
     } catch (err) {
 console.error(err);
     }
@@ -41,9 +43,14 @@ console.error(err);
       console.error(err);
     }
   };
+  useEffect(() => {
+    const preSavedFav = getFavourites();
+    if (preSavedFav && preSavedFav.length > 0){
+      setShowfav(true);
+    }}, [])
   return (
     <div className="App">
-      <SearchBar searchNow={handleSearch} getFav={getFav} />
+      <SearchBar searchNow={handleSearch} getFav={getFav} showfav={showfav}/>
 
       {currentPlayVideoId ? <Player id={currentPlayVideoId} /> : ""}
       {searchResult.length>0 ? <SearchList
