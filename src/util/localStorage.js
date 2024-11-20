@@ -19,7 +19,8 @@ export const saveFavourite = (data) => {
 
 export const getFavourites = () => {
   try {
-    return JSON.parse(localStorage.getItem(LOCAL_KEY));
+    const data = localStorage.getItem(LOCAL_KEY);
+    return data ? JSON.parse(data): [];
   } catch(e) {
 console.error("Error fetching local storage", e);
 return [];

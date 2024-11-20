@@ -17,7 +17,7 @@ const SearchBar = ({ searchNow, getFav }) => {
     if (searchInput.trim()) {
       searchNow(searchInput);
     } else {
-      setError("*Search input is empty*");
+      setError("Search input is empty. Type your search and try again ...");
     }
   };
 
@@ -28,15 +28,14 @@ const SearchBar = ({ searchNow, getFav }) => {
   };
 
   return (
-    <div className={`searchSection`}>
+    <div className={``}>
       <div className=" searchBarContainer">
         <TextField
           searchInput={searchInput}
-          placeholder="Search here...."
+          placeholder={error ? error :"Search here...."}
           onChange={handleChange}
           onEnter={handleKeyDown}
         />
-
         <button
           className="generalBtn searchButton"
           onClick={handleSearch}
@@ -46,8 +45,6 @@ const SearchBar = ({ searchNow, getFav }) => {
           onClick={() => getFav()}
         ></button>
       </div>
-
-      {error && <p className="errorText">{error}</p>}
     </div>
   );
 };
