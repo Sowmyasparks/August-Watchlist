@@ -6,17 +6,15 @@ const PopUp = ({ isOpen, info, onClose }) => {
     if (isOpen) {
       const timer = setTimeout(() => {
         onClose();
-      }, 1000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);
   if (!isOpen) return null;
   return (
-    <div className="popupWindowOverlay">
-      <div className="popupWindow">
+      <div className="popoUpWindow">
         <p>{info}</p>
       </div>
-    </div>
   );
 };
 
