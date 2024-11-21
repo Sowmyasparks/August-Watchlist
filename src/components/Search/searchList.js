@@ -7,7 +7,7 @@ const SearchList = ({ videosData, saveToFav, playVideo }) => {
     <div className="searchList">
       {videosData.map((d) => (
         <SearchItem
-          key={d.id.videoId}
+          key={`${d.id.videoId}-${d.etag}`}
           data={d}
           playVideo={playVideo}
           saveToFav={saveToFav}

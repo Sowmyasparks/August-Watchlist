@@ -4,7 +4,7 @@ export const saveFavourite = (data) => {
     const prevFav = JSON.parse(localStorage.getItem(LOCAL_KEY));
     const alreadyFav = prevFav
       ? prevFav.some((d) => d.id.videoId === data.id.videoId)
-      : "";
+      : false;
     if (!alreadyFav) {
       let updatedFav = [];
       if (prevFav) {
@@ -12,10 +12,9 @@ export const saveFavourite = (data) => {
       } else {
         updatedFav = [data];
       }
-
       localStorage.setItem(LOCAL_KEY, JSON.stringify(updatedFav));
     } else {
-      console.error("Fav was already added");
+      console.error("The item is already added to favourites");
     }
   } catch (e) {
     console.error("Error saving local storage", e);

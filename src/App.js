@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./App.css";
 import SearchBar from "./components/Search/searchBar";
 import SearchList from "./components/Search/searchList";
@@ -8,9 +8,14 @@ import { saveFavourite, getFavourites } from "./util/localStorage";
 
 function App() {
   const [searchResult, setSearchResults] = useState([]);
-  const [currentPlayVideoId, setcurrentPlayVideoId] = useState("");
+  const [currentPlayVideoId, setCurrentPlayVideoId] = useState("");
   const [searchDisplayText, setSearchDisplayText] = useState("");
-  const [showfav, setShowfav] = useState(false);
+  const [showFav, setShowfav] = useState(false);
+
+  const setEmptyData = (text) => {
+    setSearchResults([]);
+    setSearchDisplayText(text);
+  };
   const saveFavItem = (videoData) => {
     try {
       saveFavourite(videoData);
@@ -19,48 +24,52 @@ function App() {
       console.error(err);
     }
   };
-
   const getFav = () => {
     try {
-      setSearchResults([]);
-      setSearchResults(getFavourites());
+      const favourites = getFavourites();
+      if(favourites?.length > 0){
+        setSearchResults(favourites);
+        setSearchDisplayText("");
+      } else {
+        setEmptyData("No favourites available");
+      }   
     } catch (err) {
-      setSearchResults([]);
-      setSearchDisplayText("Error fetching details");
+      console.error(err);
+      setEmptyData("Error fetching details");
     }
   };
-  const handleSearch = async (queryString) => {
+  const handleSearch = useCallback (async (queryString) => {
     try {
       const results = await searchVideos(queryString);
-      if (results && results.length > 0) {
+      if (results?.length > 0) {
         setSearchResults(results);
+        setSearchDisplayText("");
       } else {
-        setSearchResults([]);
-        setSearchDisplayText("No search details available");
+        setEmptyData("No search details available");
       }
     } catch (err) {
       console.error(err);
+      setEmptyData("No search details available");
     }
-  };
+  },[]);
   useEffect(() => {
     const preSavedFav = getFavourites();
-    if (preSavedFav && preSavedFav.length > 0) {
+    if (preSavedFav?.length > 0) {
       setShowfav(true);
     }
   }, []);
   return (
     <div className="App">
-      <SearchBar searchNow={handleSearch} getFav={getFav} showfav={showfav} />
-
+      <SearchBar searchNow={handleSearch} getFav={getFav} showFav={showFav} />
       {currentPlayVideoId ? <Player id={currentPlayVideoId} /> : ""}
-      {searchResult.length > 0 ? (
+      {searchResult?.length > 0 ? (
         <SearchList
           videosData={searchResult}
           saveToFav={saveFavItem}
-          playVideo={setcurrentPlayVideoId}
+          playVideo={setCurrentPlayVideoId}
         />
       ) : (
-        searchDisplayText
+        <p className="infoText">{searchDisplayText}</p>
       )}
     </div>
   );

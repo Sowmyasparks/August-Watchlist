@@ -11,22 +11,16 @@ const SearchItem = ({ data, playVideo, saveToFav }) => {
         alt={data.snippet.title}
       />
       <p className="searchItemTitle">{data.snippet.title}</p>
-      <div className="buttonContainer">
+      <div className="searchItemBtnContainer">
         <button
-          className="actionButton"
+          className="actionBtn"
           onClick={() => playVideo(data.id.videoId)}
         >
           Play video
         </button>
-        <button className="actionButton" onClick={() => saveToFav(data)}>
+        <button className="actionBtn" onClick={() => saveToFav(data)}>
           Save to fav
         </button>
-        {/* <Button label={"Save to fav"}
-        info={"save the video to fav list"}
-        iconURL={""}
-        handleClick={() => saveToFav(data)}
-        cssStyling={""}
-        isDisabled={false} /> */}
       </div>
     </div>
   );
