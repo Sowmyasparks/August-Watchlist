@@ -3,6 +3,7 @@ import "./App.css";
 import SearchBar from "./components/Search/searchBar";
 import SearchList from "./components/Search/searchList";
 import Player from "./components/Player";
+import PopUp from "./components/PopUp";
 import { searchVideos } from "./services";
 import { saveFavourite, getFavourites } from "./util/localStorage";
 
@@ -11,6 +12,7 @@ function App() {
   const [currentPlayVideoId, setCurrentPlayVideoId] = useState("");
   const [searchDisplayText, setSearchDisplayText] = useState("");
   const [showFav, setShowfav] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const setEmptyData = (text) => {
     setSearchResults([]);
@@ -20,6 +22,7 @@ function App() {
     try {
       saveFavourite(videoData);
       setShowfav(true);
+      setIsOpen(true);
     } catch (err) {
       console.error(err);
     }
@@ -71,6 +74,11 @@ function App() {
       ) : (
         <p className="infoText">{searchDisplayText}</p>
       )}
+      <PopUp
+        isOpen={isOpen}
+        info={" Favourite saved successfully "}
+        onClose={() => setIsOpen(false)}
+      />
     </div>
   );
 }
