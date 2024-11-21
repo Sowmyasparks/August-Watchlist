@@ -3,24 +3,21 @@ import Button from "../Button";
 import "./style.css";
 
 const SearchItem = ({ data, playVideo, saveToFav }) => {
+  const title = data.snippet.title;
   return (
-    <div className="searchItem">
+    <div className="searchItem" aria-label={`Search result of ${title}`}>
       <img
         src={data.snippet.thumbnails.medium.url}
         className="searchItemThumbnail"
-        alt={data.snippet.title}
+        alt={`Thumbnail of ${title}`}
       />
-      <p className="searchItemTitle">{data.snippet.title}</p>
+      <p className="searchItemTitle">{title}</p>
       <div className="searchItemBtnContainer">
-        <button
-          className="actionBtn"
-          onClick={() => playVideo(data.id.videoId)}
-        >
-          Play video
-        </button>
-        <button className="actionBtn" onClick={() => saveToFav(data)}>
-          Save to fav
-        </button>
+        <Button
+          label={"Play video"}
+          handleClick={() => playVideo(data.id.videoId)}
+        />
+        <Button label={"Save to fav"} handleClick={() => saveToFav(data)} />
       </div>
     </div>
   );

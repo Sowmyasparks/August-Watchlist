@@ -27,18 +27,18 @@ function App() {
   const getFav = () => {
     try {
       const favourites = getFavourites();
-      if(favourites?.length > 0){
+      if (favourites?.length > 0) {
         setSearchResults(favourites);
         setSearchDisplayText("");
       } else {
         setEmptyData("No favourites available");
-      }   
+      }
     } catch (err) {
       console.error(err);
       setEmptyData("Error fetching details");
     }
   };
-  const handleSearch = useCallback (async (queryString) => {
+  const handleSearch = useCallback(async (queryString) => {
     try {
       const results = await searchVideos(queryString);
       if (results?.length > 0) {
@@ -51,7 +51,7 @@ function App() {
       console.error(err);
       setEmptyData("No search details available");
     }
-  },[]);
+  }, []);
   useEffect(() => {
     const preSavedFav = getFavourites();
     if (preSavedFav?.length > 0) {

@@ -5,6 +5,7 @@
   width: 45vw;
 }
 
-.textField:hover, textField:focus  {
+.textField:hover,
+textField:focus {
   box-shadow: 0 0.5em 1em -0.5em #ccee52;
 }

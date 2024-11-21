@@ -1,48 +1,33 @@
-.genBtn {
+.actionBtn {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: #333;
+  height: min-content;
+  border: none;
+  background: linear-gradient(0deg, rgb(35, 213, 171) 0%, rgb(45 245 198) 100%);
+  letter-spacing: 0.05em;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+.actionBtn:hover {
+  background: linear-gradient(
+    -45deg,
+    rgb(35, 213, 171) 0%,
+    rgb(111, 206, 241) 100%
+  );
+  box-shadow: 0 0.5em 1.5em -0.5em #ccee52;
+  color: aliceblue;
+  transform: translateY(-1px);
+}
+
+.actionBtn:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
 }
 
 .btnDisabled {
-}
-
-.btnActive {
-}
-
-.iconBtn {
-  background-size: 1em;
-  background-repeat: no-repeat;
-  width: 2rem;
-  height: 2rem;
-  background-position: center;
-  border-radius: 5px;
-  border: none;
-  margin: 1rem;
-}
-
-.textBtn {
-}
-
-.genBtn:hover {
-  background-color: blue;
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #260afa;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+  background-color: #333;
 }

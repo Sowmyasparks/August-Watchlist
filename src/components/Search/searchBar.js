@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import TextField from "../TextField";
+import Button from "../Button";
 import "./style.css";
 
 const SearchBar = ({ searchNow, getFav, showFav }) => {
   const [searchInput, setSearchInput] = useState("");
   const [error, setError] = useState("");
   const handleChange = (e) => {
-    e.preventDefault();
     setSearchInput(e.target.value);
   };
 
   const handleSearch = (e) => {
-    setError("");
     e.preventDefault();
+    setError("");
     if (searchInput.trim()) {
       searchNow(searchInput);
     } else {
@@ -31,19 +31,18 @@ const SearchBar = ({ searchNow, getFav, showFav }) => {
       <div className=" searchBarContainer">
         <TextField
           searchInput={searchInput}
-          placeholder={error ? error : "Search here...."}
+          placeholder={error || "Search here...."}
           onChange={handleChange}
           onEnter={handleKeyDown}
         />
         <button
           className="searchIconBtn searchButton"
           onClick={handleSearch}
+          aria-label="Search"
         ></button>
       </div>
       {showFav ? (
-        <button className="actionBtn" onClick={() => getFav()}>
-          Show Favourites
-        </button>
+        <Button label={"Show Favourites"} handleClick={() => getFav()} />
       ) : (
         ""
       )}

@@ -10,7 +10,7 @@ export const searchVideos = async (searchKey) => {
         part: "snippet",
         q: searchKey,
         key: API_KEY,
-        maxResults:8,
+        maxResults: 8,
       },
     });
     return resp.data.items;
