@@ -12,7 +12,7 @@ const PopUp = ({ isOpen, info, onClose }) => {
   }, [isOpen, onClose]);
   if (!isOpen) return null;
   return (
-      <div className="popoUpWindow">
+      <div className="popoUpWindow" aria-label="Information display">
         <p>{info}</p>
       </div>
   );

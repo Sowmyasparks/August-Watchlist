@@ -9,7 +9,7 @@ const TextField = ({ searchInput, placeholder, onChange, onEnter }) => {
       placeholder={placeholder}
       onKeyDown={onEnter}
       onChange={onChange}
-      aria-label={placeholder}
+      aria-label={`Text field for - ${placeholder}`}
       value={searchInput}
     />
   );
