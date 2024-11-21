@@ -13,8 +13,10 @@ export const saveFavourite = (data) => {
         updatedFav = [data];
       }
       localStorage.setItem(LOCAL_KEY, JSON.stringify(updatedFav));
+      return(true);
     } else {
       console.error("The item is already added to favourites");
+      return(false);
     }
   } catch (e) {
     console.error("Error saving local storage", e);

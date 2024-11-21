@@ -13,6 +13,7 @@ function App() {
   const [searchDisplayText, setSearchDisplayText] = useState("");
   const [showFav, setShowfav] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [popupMsg, setPopupMsg] = useState("");
 
   const setEmptyData = (text) => {
     setSearchResults([]);
@@ -20,9 +21,17 @@ function App() {
   };
   const saveFavItem = (videoData) => {
     try {
-      saveFavourite(videoData);
-      setShowfav(true);
-      setIsOpen(true);
+      const saveSuccess  = saveFavourite(videoData);
+      if(saveSuccess){
+        setShowfav(true);
+        setIsOpen(true);
+        setPopupMsg(" Favourite saved successfully ");
+      } else {
+        setShowfav(true);
+        setIsOpen(true);
+        setPopupMsg(" Favourite is added previously ");
+      }
+     
     } catch (err) {
       console.error(err);
     }
@@ -76,7 +85,7 @@ function App() {
       )}
       <PopUp
         isOpen={isOpen}
-        info={" Favourite saved successfully "}
+        info={popupMsg}
         onClose={() => setIsOpen(false)}
       />
     </div>
