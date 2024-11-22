@@ -61,12 +61,14 @@ Follow these instructions to set up and run the project on your local machine.
 
 GitHub link - https://github.com/Sowmyasparks/August-Watchlist
 
-Live demo link - Vercel APP link
+Live demo link - https://august-watchlist-qcn46j3lg-sowmyasparks-projects.vercel.app/
+
 ---
 
 ##  Demo  
 
-https://www.loom.com/looms/videos 
+https://www.loom.com/share/6efcd02bffef4bd0af20a0717aaf9415?sid=69b74cda-1efc-41dd-a948-36d8eb645912
+
 
 ---
 
