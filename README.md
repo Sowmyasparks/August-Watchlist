@@ -1,70 +1,85 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Video Search Application  
 
-## Available Scripts
+A web application that allows users to search for videos using youtube API, play video, and save favorites. The project is prepared for interview purpose for August
 
-In the project directory, you can run:
+---
 
-### `npm start`
+##  Features  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Search Functionality: Search using keywords.  
+- Favorites Management: Save and view favorite videos in one place.  
+- Responsive Design: Optimized for desktop and mobile devices.  
+- Popup Notifications: Smoothly animated popups for user actions like saving to favorites.  
+- Interactive UI: Dynamic buttons for playing videos and saving favorites.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technologies Used  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Frontend: React.js, CSS  
+- State Management: React useState
+- Styling: Flexbox, custom CSS animations  
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow these instructions to set up and run the project on your local machine.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites  
 
-### `npm run eject`
+- Node.js
+- npm
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/Sowmyasparks/August-Watchlist  
+   cd August-Watchlist  
+   ```  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:  
+   ```bash  
+   npm install  
+   ```  
+3. Create .env file at the level of package.json and add key(REACT_APP_YOUTUBE_API_KEY) - value(Your API key) else directly mention the API key in services.js file.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Start the development server:  
+   ```bash  
+   npm start  
+   ```  
 
-## Learn More
+5. Open your browser and navigate to:  
+   ```  
+   http://localhost:3000  
+   ```  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  Links  
 
-### Code Splitting
+GitHub link - https://github.com/Sowmyasparks/August-Watchlist
+Live demo link - Vercel APP link
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##  Demo  
 
-### Analyzing the Bundle Size
+https://www.loom.com/looms/videos 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 📝 License  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the MIT License.  
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgements  
 
-### Deployment
+- Inspiration for UI came from popular movie streaming platforms, general google search and stackoverflow.  
+- Icons and assets used from Wikipedia Commons and other free resources.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
