@@ -20,6 +20,9 @@ A web application that allows users to search for videos using youtube API, play
 - Frontend: React.js, CSS  
 - State Management: React useState
 - Styling: Flexbox, custom CSS animations  
+- Accessibility: WCAG 2.1 guidelines
+- PWA Features: Manifest file
+- Testing Tools: Lighthouse, Chrome DevTools
 
 ---
 
