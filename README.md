@@ -62,6 +62,7 @@ Follow these instructions to set up and run the project on your local machine.
 ##  Links  
 
 GitHub link - https://github.com/Sowmyasparks/August-Watchlist
+
 Live demo link - Vercel APP link
 ---
 
